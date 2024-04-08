@@ -1,0 +1,47 @@
+{
+  description = "Nixos config flake";
+
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    hyprland.url = "github:hyprwm/Hyprland";
+  };
+
+  outputs = { nixpkgs, self, ... }@inputs:
+  let
+    secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
+  in
+  {
+    nixosConfigurations = {
+      main = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; inherit secrets; };
+        modules = [
+          ./hosts/main/configuration.nix
+          ./nixosModules
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      b3rrypi = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/b3rrypi/configuration.nix
+          ./nixosModules
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      hyprland = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/hyprland/configuration.nix
+          ./nixosModules
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+    };
+  };
+}
