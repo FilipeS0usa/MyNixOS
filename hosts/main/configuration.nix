@@ -119,7 +119,6 @@
     wget
     # Personal
     neofetch
-    vscode
     git
     google-chrome
     keepassxc
