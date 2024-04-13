@@ -16,6 +16,7 @@
         confirm_os_window_close = 0;
         background_opacity = "0.85";
         hide_window_decorations = "yes";
+        allow_hyperlinks = "yes";
       };
     };
   };
