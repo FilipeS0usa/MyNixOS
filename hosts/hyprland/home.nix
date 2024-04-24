@@ -24,7 +24,55 @@
   # Watch this video https://www.youtube.com/watch?v=zt3hgSBs11g&ab_channel=Vimjoyer
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.variables = ["--all"];
+    plugins = [
+      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      # "/absolute/path/to/plugin.so"
+    ];
     settings = {
+      # This is a way to write to the configuration file.
+      #"$mod" = "SUPER";
+      #bind =
+      #  [
+      #    "$mod, b, exec, google-chrome"
+      #    "$mod, t, exec, kitty"
+      #  ]
+      #  ++ (
+      #    builtins.concatLists (builtins.genList (
+      #      x: let
+      #        ws = let
+      #          c = (x + 1) / 10;
+      #        in
+      #          builtins.toString (x + 1 - (c * 10));
+      #      in [
+      #        "$mod, ${ws}, workspace, ${toString (x + 1)}"
+      #        "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"  
+      #      ]
+      #      )
+      #      10)
+    };
+  };
+
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.flat-remix-gtk;
+      name = "Flat-Remix-GTK-Grey-Darkest";
+    };
+    iconTheme = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+    font = {
+      name = "Sans";
+      size = 11;
     };
   };
   # This value determines the Home Manager release that your configuration is
