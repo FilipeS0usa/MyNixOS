@@ -78,6 +78,15 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+  # Enable sddm display manager for login prompt
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+    #setupCommands = "
+    #  Hyprland
+    #"
+  };
+
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -86,10 +95,10 @@
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "colemak";
-  };
+  #services.xserver = {
+  #  xkb.layout = "us";
+  #  xkb.variant = "colemak";
+  #};
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
