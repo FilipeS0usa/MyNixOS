@@ -10,8 +10,9 @@
     ./cliPrograms/files/files.nix # Place home files of Cli Programs
 
     # Desktop Environment
-    ./desktopEnv/waybar.nix
-    ./desktopEnv/files/files.nix # Place home files of Desktop Environment
+    ./hyprland/waybar.nix
+    ./hyprland/hyprland.nix
+    ./hyprland/files/files.nix # Place home files of Desktop Environment
   ];
 }
 
