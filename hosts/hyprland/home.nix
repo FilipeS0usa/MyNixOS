@@ -24,6 +24,9 @@
   # Watch this video https://www.youtube.com/watch?v=zt3hgSBs11g&ab_channel=Vimjoyer
   wayland.windowManager.hyprland = {
     enable = true;
+    #package = pkgs.hyprland;
+    #xwayland.enable = true;
+    #systemd.enable = true;
     systemd.variables = ["--all"];
     plugins = [
       inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
