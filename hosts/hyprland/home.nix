@@ -29,7 +29,7 @@
     #systemd.enable = true;
     systemd.variables = ["--all"];
     plugins = [
-      inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
+      #inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars
       # "/absolute/path/to/plugin.so"
     ];
     settings = {
