@@ -19,9 +19,9 @@
       ];
       settings = {
         # This is a way to write to the configuration file.
-        "monitor" = ",preferred,auto,auto"
+        "monitor" = ",preferred,auto,auto";
         # Set start script that initializes bar, etc...
-        "exec-once" = "bash ~/.config/hypr/start.sh"
+        "exec-once" = "bash ~/.config/hypr/start.sh";
 
         "env" = "XCURSOR_SIZE,24";
         "env" = "QT_QPA_PLATFORMTHEME,qt5ct";
