@@ -64,6 +64,8 @@
   #  xwayland.enable = true;
   #};
 
+  #security.pam.services.swaylock = {};
+
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -75,17 +77,18 @@
 
   xdg.portal = {
     enable = true;
+    config.common.default = "*";
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   # Enable sddm display manager for login prompt
-  services.xserver.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
+  #services.displayManager.sddm = {
+  #  enable = true;
+  #  wayland.enable = true;
     #setupCommands = "
     #  Hyprland
     #"
-  };
+  #};
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
