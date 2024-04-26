@@ -17,8 +17,7 @@
       };
 
       # css for the window aspect
-      style = {
-        ''
+      style =''
         * {
           font-family: FiraCode;
         }
@@ -26,8 +25,7 @@
         window {
           background-color: #7c818c;
         }
-        ''
-      };
+      '';
     };
   };
 }
