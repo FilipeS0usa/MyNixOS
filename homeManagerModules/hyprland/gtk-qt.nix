@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }: {
   
   options = {
-    gtk.enable = lib.mkEnableOption "enables gtk";
+    gtk-qt.enable = lib.mkEnableOption "enables gtk-qt";
   };
 
-  config = lib.mkIf config.gtk.enable {
+  config = lib.mkIf config.gtk-qt.enable {
     home.pointerCursor = {
       gtk.enable = true;
       #size = 16;
