@@ -5,12 +5,12 @@
   };
 
   config = lib.mkIf config.gtk-qt.enable {
-    home.pointerCursor = {
-      gtk.enable = true;
-      #size = 16;
-      name = "FiraCode";
-      size = 13;
-    };
+    #home.pointerCursor = {
+    #  gtk.enable = true;
+    #  #size = 16;
+    #  name = "FiraCode";
+    #  size = 13;
+    #};
 
     gtk = {
       enable = true;
@@ -36,7 +36,7 @@
     qt = {
       enable = true;
       # Platform theme "gtk" or "Gnome"
-      platformTheme = "gtk";
+      platformTheme.name = "gtk";
       style = {
         package = pkgs.adwaita-qt;
         name = "adwaita-dark";
