@@ -5,7 +5,7 @@
   };
 
   config = lib.mkIf config.network-manager-applet.enable {
-    programs.network-manager-applet= {
+    services.network-manager-applet= {
       enable = true;
     };
   };
