@@ -145,16 +145,8 @@
     microsoft-edge-dev
     teams-for-linux
     # Packages for Hyprland
-
-    ## Notifications
-    dunst
-    libnotify
     ## Wallpaper daemon
     swww
-    ## App Launcher
-    rofi-wayland
-    ## Network manager applet
-    networkmanagerapplet
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

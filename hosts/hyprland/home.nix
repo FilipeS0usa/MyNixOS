@@ -17,14 +17,15 @@
   starship.enable = true;
   bash.enable = true;
 
-  # Enable Desktop Env
-  waybar.enable = true;
-
   # Enable Hyprland
   # Watch this video https://www.youtube.com/watch?v=zt3hgSBs11g&ab_channel=Vimjoyer
   hyprland.enable = true;
-  
-
+  gtk-qt.enable = true;
+  swaylock.enable = true;
+  waybar.enable = true;
+  wofi.enable = true;
+  network-manager-applet.enable = true; 
+  dunst.enable = true;
 
 # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
