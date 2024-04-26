@@ -12,7 +12,7 @@ pkgs.stdenv.mkDerivation {
     mkdir -p $out
     cp -R ./* $out/
     cd $out/
-    rm Backgrount.jpg
+    rm Background.jpg
     cp -r $HOME/.config/Wallpapers/12.jpg $out/Background.jpg
   '';
 }
