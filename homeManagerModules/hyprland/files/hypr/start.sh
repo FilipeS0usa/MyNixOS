@@ -3,7 +3,7 @@
 # initializing wallpaper daemon
 swww init &
 # setting wallpaper
-swww img ~/Pictures/Wallpapers/9thcm23X.png &
+swww img ~/.config/Wallpapers/12.png &
 
 # you can install this by adding
 # pkgs.networkmanagerapplet to your packages
