@@ -11,8 +11,8 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out
     cp -R ./* $out/
-    cd $out/
-    rm Background.jpg
-    cp -r $HOME/.config/Wallpapers/12.jpg $out/Background.jpg
+    #cd $out/
+    #rm Background.jpg
+    #cp -r /home/b3rrypi/Pictures/Wallpapers/12.jpg $out/Background.jpg
   '';
 }
