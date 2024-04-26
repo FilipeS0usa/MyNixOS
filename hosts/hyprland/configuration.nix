@@ -75,6 +75,15 @@
   };
 
   # Enable sddm display manager for login prompt
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "colemak";
+    };
+    libinput.enable = true;
+  };
+  
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
@@ -148,6 +157,7 @@
     # Packages for Hyprland
     ## Wallpaper daemon
     swww
+    libsForQt5.qt5.qtgraphicaleffects
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
