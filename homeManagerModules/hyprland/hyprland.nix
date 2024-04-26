@@ -46,7 +46,7 @@
 
         general = {
           "gaps_in" = "5";
-          "gaps_out" = "20";
+          "gaps_out" = "10";
           "border_size" = "2";
           "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
           "col.inactive_border" = "rgba(595959aa)";
@@ -57,7 +57,7 @@
         };
 
         decoration = {
-          "rounding" = "10";
+          "rounding" = "5";
 
           blur = {
             "enabled" = "true";
@@ -173,29 +173,6 @@
 
               "$mainMod, S, exec, rofi -show drun -show-icons"
           ];
-      };
-    };
-
-    home.pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-      size = 16;
-    };
-
-    gtk = {
-      enable = true;
-      theme = {
-        package = pkgs.flat-remix-gtk;
-        name = "Flat-Remix-GTK-Grey-Darkest";
-      };
-      iconTheme = {
-        package = pkgs.gnome.adwaita-icon-theme;
-        name = "Adwaita";
-      };
-      font = {
-        name = "Sans";
-        size = 11;
       };
     };
   };
