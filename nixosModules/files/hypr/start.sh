@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # initializing wallpaper daemon
-swww init &
+swww-daemon &
 # setting wallpaper
 swww img ~/.config/Wallpapers/12.png &
 

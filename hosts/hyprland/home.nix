@@ -19,7 +19,7 @@
 
   # Enable Hyprland
   # Watch this video https://www.youtube.com/watch?v=zt3hgSBs11g&ab_channel=Vimjoyer
-  hyprland.enable = true;
+  #hyprland.enable = false;
   gtk-qt.enable = true;
   swaylock.enable = true;
   waybar.enable = true;

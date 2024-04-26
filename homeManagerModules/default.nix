@@ -11,13 +11,13 @@
 
     # Hyprland
     ./hyprland/gtk-qt.nix
-    ./hyprland/hyprland.nix
+    #./hyprland/hyprland.nix
     ./hyprland/swaylock.nix
     ./hyprland/waybar.nix
     ./hyprland/wofi.nix
     ./hyprland/network-manager-applet.nix
     ./hyprland/dunst.nix
-    ./hyprland/files/files.nix # Place home files of Desktop Environment
+    #./hyprland/files/files.nix # Place home files of Desktop Environment
   ];
 }
 

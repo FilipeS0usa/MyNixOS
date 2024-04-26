@@ -12,6 +12,7 @@
     ];
 
   vm.enable = true;
+  hyprland.enable = true;
 
   # Home-Manager
   home-manager = {
@@ -87,6 +88,13 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    autoNumlock = true;
+    #settings = {
+    #  Autologin = {
+    #    Session = "Hyprland";
+    #    User = "b3rrypi";
+    #  };
+    #};
     theme = "${import ./pkgs/sddm-sugar-dark.nix { inherit pkgs; }}";
   };
 
