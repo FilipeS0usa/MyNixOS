@@ -75,7 +75,7 @@
   };
 
   # Enable sddm display manager for login prompt
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
     theme = "${import ./pkgs/sddm-sugar-dark.nix { inherit pkgs; }}";
