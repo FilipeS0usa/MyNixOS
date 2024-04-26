@@ -57,13 +57,6 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  # Hyprland
-  #programs.hyprland = {
-  #  enable = true;
-  #  package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-  #  xwayland.enable = true;
-  #};
-
   #security.pam.services.swaylock = {};
 
   environment.sessionVariables = {
@@ -82,26 +75,13 @@
   };
 
   # Enable sddm display manager for login prompt
-  #services.displayManager.sddm = {
-  #  enable = true;
-  #  wayland.enable = true;
-    #setupCommands = "
-    #  Hyprland
-    #"
-  #};
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    theme = "${import ./pkgs/sddm-sugar-dark.nix { inherit pkgs; }}";
+  };
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  #services.xserver = {
-  #  xkb.layout = "us";
-  #  xkb.variant = "colemak";
-  #};
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
