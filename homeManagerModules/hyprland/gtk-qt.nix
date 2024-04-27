@@ -5,12 +5,12 @@
   };
 
   config = lib.mkIf config.gtk-qt.enable {
-    #home.pointerCursor = {
-    #  gtk.enable = true;
-    #  #size = 16;
-    #  name = "FiraCode";
-    #  size = 13;
-    #};
+    home.pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 13;
+    };
 
     gtk = {
       enable = true;
@@ -27,8 +27,8 @@
         name = "Papirus-Dark";
       };
       font = {
-        package = pkgs.ubuntu_font_family;
-        name = "Ubuntu";
+        package = pkgs.nerdfonts;
+        name = "FiraCode";
         size = 12;
       };
     };
