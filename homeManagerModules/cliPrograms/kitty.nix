@@ -7,8 +7,11 @@
     programs.kitty = {
       enable = true;
       package = pkgs.kitty;
-      font.name = "JetBrainsMono Nerd Font";
-      font.size = 14;
+      font = {
+        package = pkgs.nerdfonts;
+        name = "FiraCode";
+        size = 12;
+      };
       settings = {
         # Scroll back
         scrollback_lines = 2000;
