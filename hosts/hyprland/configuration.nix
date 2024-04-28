@@ -11,10 +11,19 @@
       inputs.home-manager.nixosModules.default
     ];
 
+
+  # Enables programs
   vm.enable = true;
+
+  # Enables hyprland
   hyprland.enable = true;
 
-  # Home-Manager
+  # Enables services
+  pipewire.enable = true;
+  packages.enable = true;
+  fonts.enable = true;
+
+  # Enables Home-Manager
   home-manager = {
     extraSpecialArgs = {
       inherit inputs;
@@ -58,8 +67,6 @@
     LC_TIME = "pt_PT.UTF-8";
   };
 
-  #security.pam.services.swaylock = {};
-
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
@@ -69,71 +76,18 @@
     opengl.enable = true;
   };
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  };
-
-  # Enable sddm display manager for login prompt
-  services.xserver = {
-    enable = true;
-    xkb = {
-      layout = "us";
-      variant = "colemak";
-    };
-    libinput.enable = true;
-  };
-  
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    autoNumlock = true;
-    #settings = {
-    #  Autologin = {
-    #    Session = "Hyprland";
-    #    User = "b3rrypi";
-    #  };
-    #};
-    theme = "${import ./pkgs/sddm-sugar-dark.nix { inherit pkgs; }}";
-  };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.b3rrypi = {
     isNormalUser = true;
     description = "Filipe Silva";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  firefox
-    #  thunderbird
-    ];
   };
+
+  # Enable experimental features
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -141,45 +95,6 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
   ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    # neovim
-    wget
-    # Personal
-    neofetch
-    vscode
-    git
-    git-crypt
-    google-chrome
-    keepassxc
-    slack
-    mongodb-compass
-    obsidian
-    winbox
-    discord
-    microsoft-edge-dev
-    teams-for-linux
-    # Packages for Hyprland
-    ## Wallpaper daemon
-    swww
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
-
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
-    ]; 
-
-    fontconfig = {
-      defaultFonts = {
-        monospace = [ "FiraCode" ];
-      };
-    };
-  };
 
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -219,11 +134,6 @@
   users.extraGroups.docker.members = [ "b3rrypi" ];
   #users.extraGroups.b3rrypi.members = [ "b3rrypi" ];
 
-  environment.shellInit = ''
-    export PATH="/home/b3rrypi/.config/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin:$PATH"
-  '';
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
   networking.extraHosts =
   ''
