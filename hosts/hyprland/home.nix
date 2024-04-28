@@ -17,6 +17,9 @@
   starship.enable = true;
   bash.enable = true;
 
+  # Enable Programs
+  firefox.enable = true;
+
   # Enable Hyprland
   # Watch this video https://www.youtube.com/watch?v=zt3hgSBs11g&ab_channel=Vimjoyer
   #hyprland.enable = false;
