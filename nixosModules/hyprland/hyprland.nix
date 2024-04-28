@@ -39,6 +39,9 @@
       ## Wallpaper daemon
       swww
       libsForQt5.qt5.qtgraphicaleffects
+      hyprpaper
+      hyprpicker
+      xdg-desktop-portal-hyprland
     ];
 
     # Enable swaylock to be able to unlock with password
