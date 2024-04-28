@@ -24,17 +24,17 @@
 
           "battery" = {
             format = "{capacity}% {icon}";
-            format-icons = ["", "", "", "", ""];
+            format-icons = ["" "" "" "" ""];
           };
 
           "hyprland/workspaces" = {
             format = "{name}: {icon}";
             format-icons = {
-              1 = "";
-              2 = "";
-              3 = "";
-              4 = "";
-              5 = "";
+              "1" = "";
+              "2" = "";
+              "3" = "";
+              "4" = "";
+              "5" = "";
               active = "";
               default = "";
             };
