@@ -1,5 +1,13 @@
 { pkgs }:
 
+let
+  imgLink = "https://github.com/FilipeS0usa/B3rryPI-OS/blob/main/homeManagerModules/hyprland/files/Wallpapers/12.jpg"
+
+  image = pkgs.fetchurl {
+    url = imgLink;
+    sha256 = "13ax23892kib0wbkyjr0hvajpdvpca1f9wwhidqcy4jw5lbl75wd";
+  };
+in
 pkgs.stdenv.mkDerivation {
   name = "sddm-sugar-dark";
   src = pkgs.fetchFromGitHub {
@@ -11,8 +19,8 @@ pkgs.stdenv.mkDerivation {
   installPhase = ''
     mkdir -p $out
     cp -R ./* $out/
-    #cd $out/
-    #rm Background.jpg
-    #cp -r /home/b3rrypi/Pictures/Wallpapers/12.jpg $out/Background.jpg
+    cd $out/
+    rm Background.jpg
+    cp -r ${image} $out/Background.jpg
   '';
 }
