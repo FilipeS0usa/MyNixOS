@@ -159,7 +159,6 @@
     obsidian
     winbox
     discord
-    nerdfonts
     microsoft-edge-dev
     teams-for-linux
     # Packages for Hyprland
@@ -167,6 +166,20 @@
     swww
     libsForQt5.qt5.qtgraphicaleffects
   ];
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    ]; 
+
+    fontconfig = {
+      defaultFonts = {
+        monospace = [ "FiraCode" ];
+      };
+    };
+  };
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
