@@ -7,6 +7,7 @@
     programs.kitty = {
       enable = true;
       package = pkgs.kitty;
+      shellIntegration.enableBashIntegration = true;
       font = {
         package = pkgs.nerdfonts;
         name = "FiraCode";
