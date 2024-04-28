@@ -152,6 +152,7 @@
     neofetch
     vscode
     git
+    git-crypt
     google-chrome
     keepassxc
     slack
