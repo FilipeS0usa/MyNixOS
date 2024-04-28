@@ -10,7 +10,7 @@
       font = {
         package = pkgs.nerdfonts;
         name = "FiraCode";
-        size = 12;
+        size = 14;
       };
       settings = {
         # Scroll back
