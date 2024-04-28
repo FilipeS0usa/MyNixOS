@@ -8,7 +8,7 @@
     home.pointerCursor = {
       gtk.enable = true;
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      name = "Bibata-Modern-Classic";
       size = 13;
     };
 
@@ -20,7 +20,7 @@
       };
       cursorTheme = {
         package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Ice";
+        name = "Bibata-Modern-Classic";
       };
       iconTheme = {
         package = pkgs.nerdfonts;
@@ -35,15 +35,15 @@
       };
     };
 
-    qt = {
-      enable = true;
-      # Platform theme "gtk" or "Gnome"
-      platformTheme.name = "gtk";
-      style = {
-        package = pkgs.adwaita-qt;
-        name = "adwaita-dark";
-      };
-    };
+    #qt = {
+    #  enable = true;
+    #  # Platform theme "gtk" or "Gnome"
+    #  platformTheme.name = "gtk";
+    #  style = {
+    #    package = pkgs.adwaita-qt;
+    #    name = "adwaita-dark";
+    #  };
+    #};
   };
 }
 
