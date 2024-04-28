@@ -14,6 +14,7 @@
       google-chrome
       microsoft-edge-dev
       firefox
+      brave
       # Social
       slack
       discord
