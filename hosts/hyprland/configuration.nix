@@ -20,7 +20,6 @@
 
   # Enables services
   pipewire.enable = true;
-  packages.enable = true;
   fonts.enable = true;
 
   # Enables Home-Manager
@@ -96,6 +95,29 @@
     "electron-25.9.0"
   ];
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    # Browsers
+    #google-chrome
+    #microsoft-edge-dev
+    #firefox
+    brave
+    # Social
+    slack
+    discord
+    teams-for-linux
+    # Note taking
+    obsidian
+    # Cli Tools
+    neofetch
+    wget
+    git-crypt
+    # Tools
+    mongodb-compass
+    winbox
+    keepassxc
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

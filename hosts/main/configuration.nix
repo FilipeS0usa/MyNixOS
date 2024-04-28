@@ -121,6 +121,7 @@
     neofetch
     git
     google-chrome
+    brave
     keepassxc
     slack
     mongodb-compass
