@@ -13,25 +13,31 @@
           layer = "top";
           position = "top";
           height = 30;
+          spacing = 5;
           output = [
             "eDP-1"
             "HDMI-A-1"
           ];
-          modules-left = [ "sway/workspaces" "sway/mode" "wlr/taskbar" ];
-          modules-center = [ "sway/window" "custom/hello-from-waybar" ];
-          modules-right = [ "mpd" "custom/mymodule#with-css-id" "temperature" ];
+          modules-left = [ "hyprland/workspaces" "wlr/taskbar" ];
+          modules-center = [ "hyprland/window" ];
+          modules-right = [ "network" "bluetooth" "clock" "memory" "battery" ];
 
-          "sway/workspaces" = {
-            disable-scroll = true;
-            all-outputs = true;
+          "battery" = {
+            format = "{capacity}% {icon}";
+            format-icons = ["", "", "", "", ""];
           };
-          "custom/hello-from-waybar" = {
-            format = "hello {}";
-            max-length = 40;
-            interval = "once";
-            exec = pkgs.writeShellScript "hello-from-waybar" ''
-              echo "from within waybar"
-            '';
+
+          "hyprland/workspaces" = {
+            format = "{name}: {icon}";
+            format-icons = {
+              1 = "";
+              2 = "";
+              3 = "";
+              4 = "";
+              5 = "";
+              active = "";
+              default = "";
+            };
           };
         };
       };
