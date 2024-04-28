@@ -40,5 +40,11 @@
       swww
       libsForQt5.qt5.qtgraphicaleffects
     ];
+
+    # Enable swaylock to be able to unlock with password
+    security.pam.services.swaylock = {
+      fprintAuth = false;
+    };
+
   };
 }
