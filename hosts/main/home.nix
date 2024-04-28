@@ -16,6 +16,9 @@
   kitty.enable = true;
   starship.enable = true;
   bash.enable = true;
+
+  # Enable programs
+  firefox.enable = true;
   
   gtk-qt.enable = true;
 

@@ -12,8 +12,7 @@
         mainBar = {
           layer = "top";
           position = "top";
-          height = 30;
-          spacing = 5;
+          height = 36;
           output = [
             "eDP-1"
             "HDMI-A-1"
@@ -27,16 +26,21 @@
             format-icons = ["" "" "" "" ""];
           };
 
+          "network" = {
+            format = "{ifname}";
+            format-wifi = "{essid} ({signalStrength}%) ";
+            format-ethernet = "{ifname} ";
+            format-disconnected = "";
+          };
+
           "hyprland/workspaces" = {
             format = "{name}: {icon}";
             format-icons = {
-              "1" = "";
-              "2" = "";
-              "3" = "";
-              "4" = "";
-              "5" = "";
               active = "";
               default = "";
+            };
+            persistent-workspaces = {
+              "*" = 4;
             };
           };
         };
@@ -45,7 +49,7 @@
         * {
           border: none;
           border-radius: 0;
-          font-family: Source Code Pro;
+          font-family: FiraCode;
         }
         window#waybar {
           background: #16191C;
