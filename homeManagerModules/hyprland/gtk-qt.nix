@@ -23,8 +23,10 @@
         name = "Bibata-Modern-Ice";
       };
       iconTheme = {
-        package = pkgs.papirus-icon-theme;
-        name = "Papirus-Dark";
+        package = pkgs.nerdfonts;
+        name = "FiraCode";
+        #package = pkgs.papirus-icon-theme;
+        #name = "Papirus-Dark";
       };
       font = {
         package = pkgs.nerdfonts;
