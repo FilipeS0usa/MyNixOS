@@ -42,6 +42,12 @@
       hyprpaper
       hyprpicker
       xdg-desktop-portal-hyprland
+      # Audio
+      pavucontrol
+      # Bluetooth
+      blueman
+      # Internet
+      alacritty
     ];
 
     # Enable swaylock to be able to unlock with password
