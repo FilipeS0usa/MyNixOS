@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ secrets, config, pkgs, inputs, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -159,8 +159,8 @@
   
   networking.extraHosts =
   ''
-    10.251.220.30 gitlabserver.io
-    10.251.220.35 passboltserver.io
-    127.0.0.1  gitlab.example.com
+    ${secrets.gitlabserver}
+    ${secrets.passboltserver}
+    ${secrets.vmwareserver}
   '';
 }

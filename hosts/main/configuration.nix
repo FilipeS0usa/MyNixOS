@@ -178,7 +178,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    networking.extraHosts =
+  networking.extraHosts =
   ''
   ${secrets.gitlabserver}
   ${secrets.passboltserver}
