@@ -25,24 +25,14 @@
         # Theme
         rose-pine
 
-        #  ===== LSP SECTION =====
-       
-       #{
-        #  plugin = nvim-lspconfig;
-        #  config = toLuaFile ./files/nvim/plugin/lsp.lua;
-        #}
-
-        neodev-nvim # Faz uma autoconfiguração de language servers
+        # LSP
+        nvim-lspconfig
+        # Autocompletion
+        cmp-nvim-lsp
+        nvim-cmp
+        # Autoconfiguration of LSPs
+        neodev-nvim 
         
-        # autocompletion
-        #nvim-cmp
-        #cmp_luasnip
-        #cmp-nvim-lsp
-
-        #luasnip
-        #friendly-snippets
-        # ======= END =======
-
         # Make it prettier
         lualine-nvim
         nvim-web-devicons
@@ -50,6 +40,9 @@
         # Fuzzy Finder
         telescope-nvim
         telescope-fzf-native-nvim
+
+        # Another way to navigate between files
+        harpoon
 
         {
           plugin = comment-nvim;
@@ -59,9 +52,14 @@
         # Treesitter
         nvim-treesitter.withAllGrammars
         
+        # Better highligthing for Nix files
         vim-nix
 
-        harpoon
+        # File Tree
+        nvim-tree-lua # To toggle it just do :NvimTreeToggle
+
+        # Indentation lines
+        indent-blankline-nvim
         
       ];
 
@@ -72,6 +70,7 @@
         ${builtins.readFile ./files/nvim/plugin/telescope.lua}
         ${builtins.readFile ./files/nvim/plugin/lualine.lua}
         ${builtins.readFile ./files/nvim/plugin/treesitter.lua}
+        ${builtins.readFile ./files/nvim/plugin/lsp.lua}
       '';
       
       extraPackages = with pkgs; [
@@ -82,8 +81,15 @@
         nerdfonts
 
         # Language Servers
-        luajitPackages.lua-lsp
-        nixd
+        luajitPackages.lua-lsp # Lua
+        nil # Nix
+        yaml-language-server # Yaml
+        python311Packages.python-lsp-server # Python
+        gopls # Go
+        java-language-server # Java
+        phpactor # PHP
+        sqls # SQL
+        vscode-langservers-extracted # HTML, CSS, JavaScript
       ];
     }; 
   };
