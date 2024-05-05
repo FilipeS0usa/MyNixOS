@@ -159,8 +159,8 @@
   
   networking.extraHosts =
   ''
-    ${secrets.gitlabserver}
-    ${secrets.passboltserver}
-    ${secrets.vmwareserver}
+  ${secrets.gitlabserver}
+  ${secrets.passboltserver}
+  ${secrets.vmwareserver}
   '';
 }

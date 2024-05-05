@@ -39,24 +39,24 @@
       ## Wallpaper daemon
       swww
       libsForQt5.qt5.qtgraphicaleffects
-      hyprpaper
-      hyprpicker
       xdg-desktop-portal-hyprland
       # Hyprland Packages
       hyprlock
       hyprpaper
+      hyprpicker
       # Audio
       pavucontrol
       # Bluetooth
       blueman
       # Internet
       alacritty
+      # Logout
+      wlogout
     ];
 
     # Enable swaylock to be able to unlock with password
     security.pam.services.swaylock = {
       fprintAuth = false;
     };
-
   };
 }
