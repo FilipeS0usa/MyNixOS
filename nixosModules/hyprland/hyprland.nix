@@ -42,6 +42,9 @@
       hyprpaper
       hyprpicker
       xdg-desktop-portal-hyprland
+      # Hyprland Packages
+      hyprlock
+      hyprpaper
       # Audio
       pavucontrol
       # Bluetooth
