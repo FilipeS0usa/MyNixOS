@@ -35,7 +35,7 @@
         ];
       };
       hyprland = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; inherit secrets; };
         modules = [
           ./hosts/hyprland/configuration.nix
           ./nixosModules

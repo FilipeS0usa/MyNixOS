@@ -13,7 +13,9 @@
           layer = "top";
           position = "top";
           height = 30;
-          spacing = 4;
+          spacing = 0;
+          margin-left = 0;
+          margin-right = 0;
           output = [
             "eDP-1"
             "HDMI-A-1"
@@ -25,14 +27,14 @@
           "pulseaudio" = {
             format = "{icon} {volume}%";
             format-bluetooth = "{volume}% {icon} {format_source}";
-            format-bluetooth-muted = " {icon} {format_source}";
-            format-muted = " {format_source}";
+            format-bluetooth-muted = "󰝟 {icon} {format_source}";
+            format-muted = "󰝟 {format_source}";
             format-source = "{volume}% ";
             format-source-muted = "";
-            "format-icons" = {
+            format-icons = {
               headphone = "";
-              hands-free = "";
-              headset = "";
+              hands-free = "󰋎";
+              headset = "󰋎";
               phone = "";
               portable = "";
               car = "";
@@ -48,7 +50,7 @@
               critical = 15;
             };
             format = "{icon}   {capacity}%";
-            format-charging = "  {capacity}%";
+            format-charging = "󰢟  {capacity}%";
             format-plugged = "  {capacity}%";
             format-alt = "{icon}  {time}";
             format-icons = [ " " " " " " " " " " ];
@@ -68,7 +70,7 @@
           };
 
           "custom/system" = {
-            format = "";
+            format = "";
             tooltip = false;
           };
 
@@ -95,9 +97,9 @@
 
           "group/hardware" = {
             orientation = "inherit";
-            "drawer" = {
-              transition-duration = 300;
-              children-class = "not-memory";
+            drawer = {
+              transition-duration = 500;
+              children-class = "not-power";
               transition-left-to-right = false;
             };
             modules = [ "custom/system" "disk" "cpu" "memory" "hyprland/language" ];
@@ -107,9 +109,9 @@
           "network" = {
             format = "{ifname}";
             format-wifi = "   {signalStrength}%";
-            format-ethernet = "  {ipaddr}";
+            format-ethernet = "󰈀  {ipaddr}";
             format-disconnected = "Not connected"; 
-            tooltip-format = " {ifname} via {gwaddri}";
+            tooltip-format = "󰈀 {ifname} via {gwaddri}";
             tooltip-format-wifi = "   {essid} ({signalStrength}%)";
             tooltip-format-ethernet = "  {ifname} ({ipaddr}/{cidr})";
             tooltip-format-disconnected = "Disconnected";
@@ -147,10 +149,10 @@
             format = "{icon}";
             tooltip = true;
             "format-icons" = {
-              activated = "";
+              activated = "";
               deactivated = "";
             };
-            on-click-right = "waylock";
+            on-click-right = "hyprlock";
           };
         };
       };
@@ -173,7 +175,7 @@
         
         * {
           border: none;
-          border-radius: 0;
+          border-radius: 0px;
           font-family: FiraCode;
         }
 
@@ -301,6 +303,31 @@
             margin: 10px 15px 10px 10px;
         }
 
+        #custom-brave, 
+        #custom-browser, 
+        #custom-keybindings, 
+        #custom-outlook, 
+        #custom-filemanager, 
+        #custom-teams, 
+        #custom-chatgpt, 
+        #custom-calculator, 
+        #custom-windowsvm, 
+        #custom-cliphist, 
+        #custom-wallpaper, 
+        #custom-settings, 
+        #custom-wallpaper, 
+        #custom-system,
+        #custom-waybarthemes {
+            margin-right: 23px;
+            font-size: 20px;
+            font-weight: bold;
+            color: @iconcolor;
+        }
+
+        #custom-wabarthemes,#custom-system {
+          margin-right: 15px;
+        }
+
       /* -----------------------------------------------------
        * Hardware Group
        * ----------------------------------------------------- */
@@ -422,6 +449,21 @@
             animation-timing-function: linear;
             animation-iteration-count: infinite;
             animation-direction: alternate;
+        }
+
+       /* -----------------------------------------------------
+        * Hardware Group
+        * ----------------------------------------------------- */
+
+        #disk,#memory,#cpu,#language {
+            margin:0px;
+            padding:0px;
+            font-size:16px;
+            color:@iconcolor;
+        }
+
+        #language {
+            margin-right:10px;
         }
 
       /* -----------------------------------------------------
