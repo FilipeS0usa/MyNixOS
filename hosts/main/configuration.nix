@@ -133,6 +133,7 @@
     microsoft-edge-dev
     teams-for-linux
     git-crypt
+    devcontainer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
