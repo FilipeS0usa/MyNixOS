@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ secrets, config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -155,12 +155,4 @@
   #};
   users.extraGroups.docker.members = [ "b3rrypi" ];
   #users.extraGroups.b3rrypi.members = [ "b3rrypi" ];
-
-  
-  networking.extraHosts =
-  ''
-  ${secrets.gitlabserver}
-  ${secrets.passboltserver}
-  ${secrets.vmwareserver}
-  '';
 }
