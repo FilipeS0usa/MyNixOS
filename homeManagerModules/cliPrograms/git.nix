@@ -7,8 +7,8 @@
   config = lib.mkIf config.git.enable {
     programs.git = {
       enable = true;
-      userName = "Filipe Silva";
-      userEmail = "pipaosilva18@gmail.com";
+      userName = "FilipeS0usa";
+      userEmail = "77252969+FilipeS0usa@users.noreply.github.com";
       extraConfig = {
         core.editor = "nvim";
       };

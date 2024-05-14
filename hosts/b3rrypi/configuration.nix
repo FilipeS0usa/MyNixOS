@@ -3,18 +3,19 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
-
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../nixosModules/default.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   vm.enable = true;
 
   # Home-Manager
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = {
       inherit inputs;
     };
@@ -24,12 +25,12 @@
     };
   };
 
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-491fb9ed-8723-4fd4-b854-12447ce66b58".device = "/dev/disk/by-uuid/491fb9ed-8723-4fd4-b854-12447ce66b58";
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "b3rryOS-Nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -53,7 +54,7 @@
     LC_NAME = "pt_PT.UTF-8";
     LC_NUMERIC = "pt_PT.UTF-8";
     LC_PAPER = "pt_PT.UTF-8";
-    LC_TELEPHONE = "pt_PT.UTF-8"; 
+    LC_TELEPHONE = "pt_PT.UTF-8";
     LC_TIME = "pt_PT.UTF-8";
   };
 
@@ -104,40 +105,37 @@
     ];
   };
 
-  # Setting environment variables
-  environment.variables = {
-    GITLAB_HOME = "~/gitlab-docker";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
-  # Allow insecure packages
+
   nixpkgs.config.permittedInsecurePackages = [
-                "electron-25.9.0"
-              ];
-  
+    "electron-25.9.0"
+  ];
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-    vim 
+    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    # neovim
     wget
+    vscode
     # Personal
+    neofetch
+    git
     google-chrome
-    firefox
-    spotify
+    brave
     keepassxc
     slack
-    vlc
-    discord
-    stremio
+    mongodb-compass
     obsidian
+    winbox
+    discord
     nerdfonts
-    gnomeExtensions.ideapad 
-    home-manager
+    microsoft-edge-dev
+    teams-for-linux
+    git-crypt
+    devcontainer
   ];
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -175,9 +173,10 @@
   #};
   users.extraGroups.docker.members = [ "b3rrypi" ];
   #users.extraGroups.b3rrypi.members = [ "b3rrypi" ];
-  
+
   environment.shellInit = ''
     export PATH="/home/b3rrypi/.config/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin:$PATH"
   '';
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
