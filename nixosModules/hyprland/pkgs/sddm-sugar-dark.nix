@@ -1,11 +1,11 @@
 { pkgs }:
 
 let
-  imgLink = "https://github.com/FilipeS0usa/B3rryPI-OS/blob/005aca3ce98581e33e3e17e481afe877d4e6c97c/homeManagerModules/hyprland/files/Wallpapers/12.jpg"; 
+  imgLink = "https://github.com/FilipeS0usa/B3rryPI-OS/blob/18b2ad7d2bbe27e89cae61485f079354174024a3/homeManagerModules/hyprland/files/Wallpapers/12.png"; 
 
   image = pkgs.fetchurl {
     url = imgLink;
-    sha256 = "sha256-xZBxGHCHfNKPqueSkvO+UCU/1qHwtbikYcXkuvbd1zA=";
+    sha256 = "sha256-AkOA/QEIdZ4r95HF5kf/01TITJw3lqhTwCy2/hbBN/M=";
   };
 in
 pkgs.stdenv.mkDerivation {
