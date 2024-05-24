@@ -134,6 +134,9 @@
     teams-for-linux
     git-crypt
     devcontainer
+    spotify
+    protonvpn-gui
+    gnomeExtensions.proton-vpn-button
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
