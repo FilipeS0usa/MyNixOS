@@ -115,26 +115,22 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    # neovim
     wget
     vscode
     # Personal
     neofetch
     git
-    google-chrome
+    git-crypt
     brave
     keepassxc
     slack
     mongodb-compass
     obsidian
-    winbox
     discord
     nerdfonts
-    microsoft-edge-dev
     teams-for-linux
-    git-crypt
     devcontainer
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
