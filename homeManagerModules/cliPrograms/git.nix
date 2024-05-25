@@ -14,9 +14,5 @@
       };
       lfs.enable = true;
     };
-    programs.git-credential-oauth = {
-      enable = true;
-      package = pkgs.git-credential-oauth;
-    };
   };
 }
