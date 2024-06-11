@@ -119,21 +119,15 @@
     wget
     vscode
     # Personal
-    neofetch
     git
-    google-chrome
     brave
-    keepassxc
     slack
     mongodb-compass
-    obsidian
     winbox
     discord
     nerdfonts
-    microsoft-edge-dev
     teams-for-linux
     git-crypt
-    devcontainer
     spotify
     protonvpn-gui
     gnomeExtensions.proton-vpn-button
