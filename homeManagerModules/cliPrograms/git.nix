@@ -12,6 +12,7 @@
       extraConfig = {
         core.editor = "nvim";
       };
+      lfs.enable = true;
     };
   };
 }
