@@ -126,7 +126,6 @@
     winbox
     discord
     nerdfonts
-    teams-for-linux
     git-crypt
     spotify
     protonvpn-gui
