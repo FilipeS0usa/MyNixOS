@@ -178,6 +178,7 @@
   networking.extraHosts =
   ''
   ${secrets.gitlabserver}
+  ${secrets.gitlabserverECD}
   ${secrets.passboltserver}
   ${secrets.vmwareserver}
   '';
