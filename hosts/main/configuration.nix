@@ -12,7 +12,6 @@
     ];
 
   vm.enable = true;
-  wine.enable = true;
 
   # Home-Manager
   home-manager = {
@@ -124,7 +123,6 @@
     brave
     slack
     mongodb-compass
-    winbox
     discord
     nerdfonts
     git-crypt

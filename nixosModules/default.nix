@@ -3,7 +3,6 @@
   imports = [
     # Programs
     ./programs/vm.nix
-    ./programs/wine.nix
     # Hyprland
     ./hyprland/hyprland.nix
     # Services
