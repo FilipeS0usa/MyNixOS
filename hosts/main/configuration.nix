@@ -12,6 +12,7 @@
     ];
 
   vm.enable = true;
+  wine.enable = true;
 
   # Home-Manager
   home-manager = {
@@ -196,5 +197,4 @@
   #   };
   # };
   # users.extraGroups.vboxusers.members = [ "b3rrypi" ];
-
 }
