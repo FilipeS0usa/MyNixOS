@@ -130,6 +130,7 @@
     spotify
     protonvpn-gui
     gnomeExtensions.proton-vpn-button
+    gnomeExtensions.blur-my-shell
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
