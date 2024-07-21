@@ -1,5 +1,7 @@
 { pkgs, ... }: {
 
+  stylix.enable = true;
+
   # To search for base16 themes do the following commands
   # nix build nixpkgs#base16-schemes
   # cd result
@@ -17,7 +19,7 @@
     #};
 
   # To generate colors from walpapper
-  stylix.image = /home/b3rrypi/.config/Wallpapers/02.png;
+  stylix.image = /home/b3rrypi/.config/Wallpapers/14.png;
 
   # To search for cursor available just do the following commands
   # nix build nixpkgs#bibata-cursors
@@ -25,8 +27,11 @@
   # nix run nixpkgs#eza -- --tree --level 3
   # This will give all names of the bibata cursors package available
 
-  stylix.cursor.package = pkgs.bibata-cursors;
-  stylix.cursor.name = "Bibata-Modern-Ice";
+  stylix.cursor = {
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Amber";
+    size = 23;
+  };
 
   # For selecting Fonts
   stylix.fonts = {
@@ -47,18 +52,24 @@
   # Change font size
   stylix.fonts.sizes = {
       applications = 12;
-      terminal = 15;
-      desktop = 10;
-      popups = 10;
+      terminal = 12;
+      desktop = 12;
+      popups = 12;
   };
 
   # For programs opacity
   stylix.opacity = {
-    applications = 1.0;
-    terminal = 1.0;
-    desktop = 1.0;
-    popups = 1.0;
+    applications = 0.85;
+    terminal = 0.85;
+    desktop = 0.85;
+    popups = 0.85;
   }; 
 
   stylix.polarity = "dark";
+
+  stylix.targets.chromium.enable = true;
+
+  stylix.targets.console.enable = true;
+
+  stylix.targets.gnome.enable = true;
 }

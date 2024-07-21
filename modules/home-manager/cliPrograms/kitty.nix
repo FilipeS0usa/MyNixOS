@@ -8,11 +8,12 @@
       enable = true;
       package = pkgs.kitty;
       shellIntegration.enableBashIntegration = true;
-      font = {
-        package = pkgs.nerdfonts;
-        name = "FiraCode";
-        size = 14;
-      };
+      # This is no longer needed, now we use stylix
+      # font = {
+      #   package = pkgs.nerdfonts;
+      #   name = "FiraCode";
+      #   size = 14;
+      # };
       settings = {
         # Scroll back
         scrollback_lines = 2000;
@@ -27,8 +28,9 @@
        # active_border_color = "#4d4dff";
        # inactive_border_color = "#008ad8";
         placement_strategy = "center";
+        # This is not needed as well, we use stylix
         # Background
-        background_opacity = "0.85";
+        # background_opacity = "0.85";
         # Hyperlinks
         allow_hyperlinks = "yes";
       };
