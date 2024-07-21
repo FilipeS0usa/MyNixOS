@@ -2,8 +2,13 @@
 
 {
   imports = [
-    ./../../homeManagerModules/default.nix
+    # ./../../homeManagerModules/default.nix
+    ./../../modules/home-manager
   ];
+
+  # If we want to disable the stylix in some program
+  # stylix.targets.nixvim.enable = false;
+  # wayland.windowManager.hyprland.settings.general."col.active_border" = lib.mkForce "rgb(${config.stylix.base16Scheme.base0E})";
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -20,7 +25,7 @@
   # Enable programs
   firefox.enable = true;
   
-  gtk-qt.enable = true;
+  # gtk-qt.enable = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

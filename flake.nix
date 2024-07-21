@@ -10,6 +10,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = { nixpkgs, self, ... }@inputs:
@@ -24,6 +26,7 @@
           ./hosts/main/configuration.nix
           ./nixosModules
           inputs.home-manager.nixosModules.default
+          inputs.stylix.nixosModules.stylix
         ];
       };
       b3rrypi = nixpkgs.lib.nixosSystem {
