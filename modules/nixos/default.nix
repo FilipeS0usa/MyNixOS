@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }: {
+{ ... }: {
   
   imports = [
     # Programs
     ./programs/vm.nix
+    ./programs/stylix.nix
     # Hyprland
     ./hyprland/hyprland.nix
     # Services
