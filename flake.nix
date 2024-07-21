@@ -24,7 +24,7 @@
         specialArgs = { inherit inputs; inherit secrets; };
         modules = [
           ./hosts/main/configuration.nix
-          ./nixosModules
+          ./modules/nixos
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
         ];
