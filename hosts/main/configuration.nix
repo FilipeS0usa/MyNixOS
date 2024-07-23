@@ -110,7 +110,6 @@
     slack
     mongodb-compass
     discord
-    nerdfonts
     git-crypt
     spotify
     protonvpn-gui
