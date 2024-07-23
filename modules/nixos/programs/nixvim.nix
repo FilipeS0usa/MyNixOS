@@ -1,11 +1,10 @@
-{ ... }: {
+{ self, pkgs, ... }: {
 programs.nixvim = {
     enable = true;
     defaultEditor = true;
     
     viAlias = true;
     vimAlias = true;
-    vimdiffAlias = true;
 
     globals = {
       mapleader = " ";
@@ -13,7 +12,7 @@ programs.nixvim = {
     };
 
     clipboard.register = "unnamedplus";
-    options = {
+    opts = {
       number = true;
       relativenumber = true;
       signcolumn = "yes";
@@ -41,11 +40,9 @@ programs.nixvim = {
         keymaps = {
           "<leader>pf" = {
             action = "find_files";
-            desc = "Telescope Files";
           };
           "C-p" = {
             action = "git_files";
-            desc = "Telescope Git Files";
           };
           "<leader>ps" = {
             action = "grep_string";
@@ -91,6 +88,18 @@ programs.nixvim = {
         };
       };
       # === FUTURE PLUGINS ===
+      lsp = {
+        enable = true;
+        servers = {
+          lua-ls.enable = true;
+          pylsp.enable = true;
+          tsserver.enable = false; 
+          # rust-analyzer = {
+          #   enable = true;
+          #   installCargo = false;
+          # };
+        };
+      };
     };
   };
 }
