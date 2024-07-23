@@ -9,14 +9,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hyprland
     hyprland.url = "github:hyprwm/Hyprland";
 
+    # Stylix for styling my OS collors
     stylix.url = "github:danth/stylix";
 
+    # Firefox for firefox personalize
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Nixvim
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; 
   };
 
   outputs = { nixpkgs, self, ... }@inputs:
@@ -32,6 +41,7 @@
           ./modules/nixos
           inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
+          inputs.nixvim.nixosModules.nixvim
         ];
       };
       b3rrypi = nixpkgs.lib.nixosSystem {
