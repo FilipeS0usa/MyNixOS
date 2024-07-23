@@ -65,7 +65,12 @@
     homeConfigurations = {
       b3rrypi = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
+	    extraSpecialArgs = { inherit inputs; };
+        modules = [ 
+          ./home.nix
+          inputs.stylix.homeManagerModules.stylix
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
       };
     };
   };
