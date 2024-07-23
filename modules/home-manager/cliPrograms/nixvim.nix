@@ -39,6 +39,7 @@
 
         plugins = {
           luasnip.enable = true;
+		  nix.enable = true;
 
           # === TELESCOPE ===
           telescope = {
@@ -93,19 +94,30 @@
               };
             };
           };
-          # === FUTURE PLUGINS ===
+          # === LSP ===
           lsp = {
             enable = true;
+			inlayHints = true;
             servers = {
               lua-ls.enable = true;
               pylsp.enable = true;
-              tsserver.enable = false; 
-              # rust-analyzer = {
-              #   enable = true;
-              #   installCargo = false;
-              # };
+			  nixd.enable = true;
+			  ruby-lsp.enable = true;
+			  sqls.enable = true;
+			  texlab.enable = true;
+			  jsonls.enable = true;
+			  html.enable = true;
+			  cssls.enable = true;
+			  bashls.enable = true;
+			  ansiblels.enable = true;
+			  java-language-server.enable = true;
+			  dockerls.enable = true;
+			  docker-compose-language-service.enable = true;
             };
           };
+		  # === CMP NVIM LSP ===
+		  cmp-nvim-lsp.enable = true;
+          cmp.enable = true;
         };
       };
     };
