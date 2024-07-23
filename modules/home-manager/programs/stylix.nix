@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, config, ... }: {
 
   stylix.enable = true;
 
@@ -66,10 +66,4 @@
   }; 
 
   stylix.polarity = "dark";
-
-  stylix.targets.chromium.enable = true;
-
-  stylix.targets.console.enable = true;
-
-  stylix.targets.gnome.enable = true;
 }
