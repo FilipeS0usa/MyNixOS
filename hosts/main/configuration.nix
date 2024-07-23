@@ -8,22 +8,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../modules/nixos
-      inputs.home-manager.nixosModules.default
     ];
 
   vm.enable = true;
-
-  # Home-Manager
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-
-    users."b3rrypi" = {
-      imports = [ ./home.nix ];
-    };
-  };
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

@@ -3,7 +3,7 @@
 {
   imports = [
     # ./../../homeManagerModules/default.nix
-    ./../../modules/home-manager
+    ./modules/home-manager
   ];
 
   # If we want to disable the stylix in some program
