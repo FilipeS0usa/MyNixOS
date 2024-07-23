@@ -1,16 +1,12 @@
-{ config, pkgs, lib, ... }: {
+{ inputs, config, lib, ... }: {
   
   options = {
     nixvim.enable = lib.mkEnableOption "enables nixvim";
   };
 
   config = lib.mkIf config.nixvim.enable {
-    programs.nixvim = 
-    let 
-      toLua = str: "lua << EOF\n${str}\nEOF\n";
-      toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-    in
-    {
+    inputs.nixvim.programs.nixvim = {
+
       enable = true;
       defaultEditor = true;
       
@@ -18,73 +14,92 @@
       vimAlias = true;
       vimdiffAlias = true;
 
-      plugins = with pkgs.vimPlugins; [
-        
-        vim-be-good
-        
-        # Theme
-        rose-pine
+      globals = {
+        mapleader = " ";
+        maplocalleader = " ";
+      };
 
-        #  ===== LSP SECTION =====
-       
-       #{
-        #  plugin = nvim-lspconfig;
-        #  config = toLuaFile ./nvim/plugin/lsp.lua;
-        #}
-
-        neodev-nvim # Faz uma autoconfiguração de language servers
-        
-        # autocompletion
-        #nvim-cmp
-        #cmp_luasnip
-        #cmp-nvim-lsp
-
-        #luasnip
-        #friendly-snippets
-        # ======= END =======
-
-        # Make it prettier
-        lualine-nvim
-        nvim-web-devicons
-
-        # Fuzzy Finder
-        telescope-nvim
-        telescope-fzf-native-nvim
-
-        {
-          plugin = comment-nvim;
-          config = toLua "require(\"Comment\").setup()";	
-        }
-
-        # Treesitter
-        nvim-treesitter.withAllGrammars
-        
-        vim-nix
-
-        harpoon
-        
-      ];
-
-      extraLuaConfig = '' 
-        ${builtins.readFile ./nvim/options.lua}
-        ${builtins.readFile ./nvim/plugin/harpoon.lua}
-        ${builtins.readFile ./nvim/plugin/rosepine.lua}
-        ${builtins.readFile ./nvim/plugin/telescope.lua}
-        ${builtins.readFile ./nvim/plugin/lualine.lua}
-        ${builtins.readFile ./nvim/plugin/treesitter.lua}
-      '';
+      clipboard.register = "unnamedplus";
+      options = {
+        number = true;
+        relativenumber = true;
+        signcolumn = "yes";
+        tabstop = 4;
+        shiftwidth = 4;
+        updatetime = 300;
+        termguicolors = true;
+        mouse = "a";
+      };
       
-      extraPackages = with pkgs; [
-        # Extra pkgs
-        xclip
-        wl-clipboard
-        ripgrep
-        nerdfonts
-
-        # Language Servers
-        luajitPackages.lua-lsp
-        nixd
+      keymaps = [
+        {
+          action = "<cmd>Ex";
+          key = "<leader>pv";
+        }
       ];
+
+      plugins = {
+        luasnip.enable = true;
+        oil.enable = true;
+
+        # === TELESCOPE ===
+        telescope = {
+          enable = true;
+          keymaps = {
+            "<leader>pf" = {
+              action = "find_files";
+              desc = "Telescope Files";
+            };
+            "C-p" = {
+              action = "git_files";
+              desc = "Telescope Git Files";
+            };
+            "<leader>ps" = {
+              action = "grep_string";
+            };
+          };
+          extensions.fzf-native = {
+            enable = true;
+            settings = {
+              case_mode = "smart_case";
+              fuzzy = true;
+              override_generic_sorter = true;
+              override_file_sorter = true;
+            };
+          };
+        };
+
+        # === TREESITTER ===
+        treesitter = {
+          enable = true;
+          settings = {
+            ensure_installed = [];
+            auto_install = false;
+            highlight = {
+              enable = true;
+            };
+            indent.enable = true;
+          };
+        };
+
+        # === HARPOON ===
+        harpoon = {
+          enable = true;
+          enableTelescope = true;
+          keymaps = {
+            addFile = "<leader>a";
+            cmdToggleQuickMenu = "<C-e>";
+            navFile = {
+              "1" = "<C-s>";
+              "2" = "<C-t>";
+              "3" = "<C-h>";
+              "4" = "<C-n>";
+            };
+          };
+        };
+        # === FUTURE PLUGINS ===
+      };
+
     }; 
   };
 }
