@@ -10,6 +10,7 @@
         
         viAlias = true;
         vimAlias = true;
+        vimdiffAlias = true;
 
         globals = {
           mapleader = " ";
