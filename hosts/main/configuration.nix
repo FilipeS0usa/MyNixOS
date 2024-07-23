@@ -196,4 +196,7 @@
   #   };
   # };
   # users.extraGroups.vboxusers.members = [ "b3rrypi" ];
+
+  # To enable bash completion
+  environment.pathsToLink = [ "/share/bash-completion" ];
 }

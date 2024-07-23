@@ -8,6 +8,7 @@
     programs.bash= {
       enable = true;
       enableCompletion = true;
+      bashrcExtra = "set -o vi";
       initExtra = ''
         eval "$(starship init bash)"
       '';
