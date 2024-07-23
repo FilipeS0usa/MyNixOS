@@ -12,6 +12,7 @@ programs.nixvim = {
     };
 
     clipboard.register = "unnamedplus";
+
     opts = {
       number = true;
       relativenumber = true;
@@ -32,7 +33,6 @@ programs.nixvim = {
 
     plugins = {
       luasnip.enable = true;
-      oil.enable = true;
 
       # === TELESCOPE ===
       telescope = {

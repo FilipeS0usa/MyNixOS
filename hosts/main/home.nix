@@ -22,7 +22,7 @@
   bash.enable = true;
 
 
-  # nvim.enable = false; 
+  nvim.enable = true; 
   # nixvim.enable = true;
 
   # Enable programs
