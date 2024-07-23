@@ -17,10 +17,13 @@
 
   # Enable cliPrograms
   git.enable = true;
-  nvim.enable = true; 
   kitty.enable = true;
   starship.enable = true;
   bash.enable = true;
+
+
+  # nvim.enable = false; 
+  # nixvim.enable = true;
 
   # Enable programs
   firefox.enable = true;
