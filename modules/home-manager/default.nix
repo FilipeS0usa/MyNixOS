@@ -3,11 +3,12 @@
   imports = [
     # Cli Programs
     ./cliPrograms/git.nix
-    ./cliPrograms/nvim.nix 
     ./cliPrograms/kitty.nix 
     ./cliPrograms/starship.nix
     ./cliPrograms/bash.nix
     ./cliPrograms/files/files.nix # Place home files of Cli Programs
+    # ./cliPrograms/nvim.nix 
+    # ./cliPrograms/experimentation/nixvim.nix
 
     # Programs
     ./programs/firefox.nix
