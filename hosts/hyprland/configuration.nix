@@ -8,7 +8,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../../nixosModules/default.nix
-      inputs.home-manager.nixosModules.default
     ];
 
 
@@ -16,23 +15,14 @@
   vm.enable = true;
 
   # Enables hyprland
-  hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+	package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  };
 
   # Enables services
   pipewire.enable = true;
   fonts.enable = true;
-
-  # Enables Home-Manager
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs;
-    };
-
-    users."b3rrypi" = {
-      imports = [ ./home.nix ];
-    };
-  };
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
