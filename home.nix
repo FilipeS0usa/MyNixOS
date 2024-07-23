@@ -20,8 +20,7 @@
   kitty.enable = true;
   starship.enable = true;
   bash.enable = true;
-  nvim.enable = true; 
-  nixvim.enable = false;
+  nixvim.enable = true;
 
 
   # Enable programs

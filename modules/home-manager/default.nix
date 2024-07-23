@@ -7,7 +7,6 @@
     ./cliPrograms/starship.nix
     ./cliPrograms/bash.nix
     ./cliPrograms/files/files.nix # Place home files of Cli Programs
-    ./cliPrograms/nvim.nix 
     ./cliPrograms/nixvim.nix
 
     # Programs
