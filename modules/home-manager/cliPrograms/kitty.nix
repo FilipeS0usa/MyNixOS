@@ -8,12 +8,6 @@
       enable = true;
       package = pkgs.kitty;
       shellIntegration.enableBashIntegration = true;
-      # This is no longer needed, now we use stylix
-      # font = {
-      #   package = pkgs.nerdfonts;
-      #   name = "FiraCode";
-      #   size = 14;
-      # };
       settings = {
         # Scroll back
         scrollback_lines = 2000;
@@ -22,15 +16,11 @@
         window_padding_width = 4;
         confirm_os_window_close = 0;
         hide_window_decorations = "yes";
-        window_margin_width = 2;
+        # window_margin_width = 2;
         # Border settings
-        window_border_width = "0.5pt";
-       # active_border_color = "#4d4dff";
-       # inactive_border_color = "#008ad8";
+        # window_border_width = "0.5pt";
         placement_strategy = "center";
-        # This is not needed as well, we use stylix
-        # Background
-        # background_opacity = "0.85";
+		draw_minimal_borders = "yes";
         # Hyperlinks
         allow_hyperlinks = "yes";
       };
