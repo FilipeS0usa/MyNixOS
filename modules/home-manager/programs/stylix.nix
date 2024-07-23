@@ -10,7 +10,7 @@
   # This will give all the yaml file names of the themes available
 
   # To generate from .yaml file
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
 
   # Example for specific colors
   # stylix.base16Scheme = {
