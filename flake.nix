@@ -43,8 +43,6 @@
         modules = [
           ./hosts/main/configuration.nix
           ./modules/nixos
-          inputs.stylix.nixosModules.stylix
-          inputs.nixvim.nixosModules.nixvim
         ];
       };
       b3rrypi = lib.nixosSystem {
