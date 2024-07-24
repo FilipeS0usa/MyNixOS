@@ -2,8 +2,10 @@
     let
       startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
         ${pkgs.waybar}/bin/waybar &
-        ${pkgs.swww}/bin/swww init &
+        ${pkgs.hyprpaper}/bin/hyprpaper &
+        ${pkgs.hypridle}/bin/hypridle&
         ${pkgs.dunst}/bin/dunts &
+
 
         sleep 1
 
@@ -16,11 +18,17 @@
     hyprland.enable = lib.mkEnableOption "enables hyprland";
   };
 
-  config = lib.mkIf config.hyprland.enable
-    {
+  config = lib.mkIf config.hyprland.enable {
+
+    imports =
+      [ # Include all the Hyprland configurations.
+        ./hyprpaper.nix
+        ./hypridle.nix
+        ./hyprlock.nix
+      ];
+
     wayland.windowManager.hyprland = {
       enable = true;
-      #package = pkgs.hyprland;
       xwayland.enable = true;
       systemd = {
         enable = true;
@@ -38,6 +46,7 @@
 
         env = [
           "XCURSOR_SIZE,24"
+          "HYPRCURSOR_SIZE,24"
           "QT_QPA_PLATFORMTHEME,qt5ct"
         ];
 
