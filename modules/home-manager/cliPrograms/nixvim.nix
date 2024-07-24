@@ -8,6 +8,8 @@
         enable = true;
         defaultEditor = true;
         
+        extraPackages = [pkgs.xclip];
+        
         viAlias = true;
         vimAlias = true;
         vimdiffAlias = true;
@@ -17,7 +19,6 @@
           maplocalleader = " ";
         };
 
-        clipboard.register = "unnamedplus";
 
         opts = {
           number = true;
@@ -28,6 +29,7 @@
           updatetime = 300;
           termguicolors = true;
           mouse = "a";
+          clipboard = "unnamedplus";
         };
         
         keymaps = [
