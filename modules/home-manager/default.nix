@@ -14,12 +14,7 @@
     ./programs/stylix.nix
 
     # Hyprland
-    # #./hyprland/hyprland.nix
-    # ./hyprland/swaylock.nix
-    # ./hyprland/waybar.nix
-    # ./hyprland/wofi.nix
-    # ./hyprland/network-manager-applet.nix
-    # ./hyprland/dunst.nix
+    ./hyprland/hyprland.nix
   ];
 }
 

@@ -22,11 +22,11 @@
   bash.enable = true;
   nixvim.enable = true;
 
-
   # Enable programs
   firefox.enable = true;
   
-  # gtk-qt.enable = true;
+  # Enable Hyprland config
+  hyprland.enable = false;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
