@@ -40,7 +40,23 @@
         plugins = {
           luasnip.enable = true;
 		  nix.enable = true;
-          lint.enable = true;
+          conform-nvim = {
+            enable = true;
+            formattersByFt = {
+              javascript = [ "prettier" ];
+              javascriptreact = [ "prettier" ];
+              css = [ "prettier" ];
+              html = [ "prettier" ];
+              json = [ "prettier" ];
+              yaml = [ "prettier" ];
+              markdown = [ "prettier" ];
+              python = [ "isort" "black" ];
+            };
+            formatOnSave = {
+              lspFallback = true;
+              timeoutMs = 500;
+            };
+          };
 
           # === TELESCOPE ===
           telescope = {
