@@ -13,19 +13,12 @@
       '';
     in
   {
-  
   options = {
     hyprland.enable = lib.mkEnableOption "enables hyprland";
   };
 
   config = lib.mkIf config.hyprland.enable {
 
-    imports =
-      [ # Include all the Hyprland configurations.
-        ./hyprpaper.nix
-        ./hypridle.nix
-        ./hyprlock.nix
-      ];
 
     wayland.windowManager.hyprland = {
       enable = true;

@@ -40,6 +40,7 @@
         plugins = {
           luasnip.enable = true;
 		  nix.enable = true;
+          lint.enable = true;
 
           # === TELESCOPE ===
           telescope = {

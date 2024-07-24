@@ -27,6 +27,9 @@
   
   # Enable Hyprland config
   hyprland.enable = false;
+  hyprpaper.enable = false;
+  hypridle.enable = false;
+  hyprlock.enable = false;
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 

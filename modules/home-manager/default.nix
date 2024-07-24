@@ -15,6 +15,9 @@
 
     # Hyprland
     ./hyprland/hyprland.nix
+    ./hyprland/hyprpaper.nix
+    ./hyprland/hypridle.nix
+    ./hyprland/hyprlock.nix
   ];
 }
 
