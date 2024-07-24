@@ -1,10 +1,23 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: 
+    let
+      startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
+        ${pkgs.waybar}/bin/waybar &
+        ${pkgs.swww}/bin/swww init &
+        ${pkgs.dunst}/bin/dunts &
+
+        sleep 1
+
+        ${pkgs.swww}/bin/swww img ${/home/b3rrypi/Pictures/Wallpapers/14.png} &
+      '';
+    in
+  {
   
   options = {
     hyprland.enable = lib.mkEnableOption "enables hyprland";
   };
 
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf config.hyprland.enable
+    {
     wayland.windowManager.hyprland = {
       enable = true;
       #package = pkgs.hyprland;
@@ -21,7 +34,7 @@
         # This is a way to write to the configuration file.
         "monitor" = ",preferred,auto,auto";
         # Set start script that initializes bar, etc...
-        "exec-once" = "bash ~/.config/hypr/start.sh";
+        "exec-once" = ''${startupScript}/bin/start'';
 
         env = [
           "XCURSOR_SIZE,24"
