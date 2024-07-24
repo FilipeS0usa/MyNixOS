@@ -107,6 +107,12 @@
     mongodb-compass
     winbox
     keepassxc
+    # Hyprland Extras
+    hyprpaper
+    hyprpicker
+    hypridle
+    hyprlock
+    hyprcursor
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
