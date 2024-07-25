@@ -42,6 +42,9 @@
         plugins = {
           luasnip.enable = true;
 		  nix.enable = true;
+          git-conflict.enable = true;
+
+          # === CONFORM ===
           conform-nvim = {
             enable = true;
             formattersByFt = {
