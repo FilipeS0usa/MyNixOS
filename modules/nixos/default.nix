@@ -13,9 +13,10 @@
     ./system-conf/bootloader.nix
     ./system-conf/extras.nix
     ./system-conf/firewall.nix
-    ./system-conf/gnome-de.nix
     ./system-conf/network.nix
     ./system-conf/time-location.nix
-
+    # Sytem environments 
+    ./environments/hyprland-de.nix
+    ./environments/gnome-de.nix
   ];
 }
