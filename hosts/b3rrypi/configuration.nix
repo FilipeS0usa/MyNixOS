@@ -10,74 +10,29 @@
       ./../../nixosModules/default.nix
     ];
 
-  vm.enable = true;
+  # Programs
+  qemu-kvm.enable = true;
+  docker.enable = true;
+  virtualbox.enable = false;
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # General System Configs
+  ## Bootloader
+  bootloader.enable = true;
+  ## Network
+  network.enable = true;
+  ## Timezone/time
+  time-location.enable = true; 
+  ## Desktop Environment
+  gnome-de.enable = true;
+  ## Sound
+  pipewire.enable = true;
+  ## FireWall
+  firewall.enable = true; 
+  ## Extra NixOS Options (ex.: Flake, Allow unfree, ...)
+  extras.enable = true;
+  # Optimizations 
+  storage-optimization.enable = true;
 
-  networking.hostName = "b3rryOS-Nix"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Lisbon";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "pt_PT.UTF-8";
-    LC_IDENTIFICATION = "pt_PT.UTF-8";
-    LC_MEASUREMENT = "pt_PT.UTF-8";
-    LC_MONETARY = "pt_PT.UTF-8";
-    LC_NAME = "pt_PT.UTF-8";
-    LC_NUMERIC = "pt_PT.UTF-8";
-    LC_PAPER = "pt_PT.UTF-8";
-    LC_TELEPHONE = "pt_PT.UTF-8";
-    LC_TIME = "pt_PT.UTF-8";
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "colemak";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.b3rrypi = {
@@ -90,33 +45,26 @@
     ];
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
-    vscode
     # Personal
-    neofetch
-    git
-    git-crypt
     brave
-    keepassxc
-    slack
-    mongodb-compass
     obsidian
     discord
-    nerdfonts
-    teams-for-linux
-    devcontainer
     spotify
+    protonvpn-gui
+    gnomeExtensions.proton-vpn-button
+    # Code
+    vscode
+    slack
+    mongodb-compass
+    git
+    git-crypt
   ];
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -126,16 +74,8 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -144,20 +84,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
-
-  # Enabling docker
-  virtualisation.docker.enable = true;
-  #virtualisation.docker.extraOptions = "--dns 8.8.8.8 --dns 8.8.4.4";
-  #virtualisation.docker.rootless = {
-  #enable = true;
-  #setSocketVariable = true;
-  #};
-  users.extraGroups.docker.members = [ "b3rrypi" ];
-  #users.extraGroups.b3rrypi.members = [ "b3rrypi" ];
-
-  environment.shellInit = ''
-    export PATH="/home/b3rrypi/.config/Code/User/globalStorage/ms-vscode-remote.remote-containers/cli-bin:$PATH"
-  '';
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
