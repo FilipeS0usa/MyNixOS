@@ -2,7 +2,9 @@
   
   imports = [
     # Programs
-    ./programs/vm.nix
+    ./programs/docker.nix
+    ./programs/qemu-kvm.nix
+    ./programs/virtualbox.nix
     # Services
     ./services/pipewire.nix
     # Storage Optimization
