@@ -11,6 +11,7 @@
     ];
 
   vm.enable = true;
+  storage-optimization = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
