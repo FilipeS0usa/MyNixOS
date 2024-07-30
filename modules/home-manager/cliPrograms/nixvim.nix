@@ -34,7 +34,7 @@
         
         keymaps = [
           {
-            action = "<cmd>Ex";
+            action = "<cmd>Ex<CR>";
             key = "<leader>pv";
           }
         ];
@@ -43,6 +43,20 @@
           luasnip.enable = true;
 		  nix.enable = true;
           git-conflict.enable = true;
+          
+          # === VIMTEX ===
+          vimtex = {
+            enable = true;
+            package = pkgs.vimPlugins.vimtex;
+            texlivePackage = pkgs.texliveFull;
+            settings = {
+              toc_config = {
+                split_pos = "vert topleft";
+                split_width = 40;
+              };
+              view_method = "zathura";
+            };
+          };
 
           # === CONFORM ===
           conform-nvim = {
@@ -116,6 +130,7 @@
               };
             };
           };
+
           # === LSP ===
           lsp = {
             enable = true;
@@ -124,7 +139,10 @@
               lua-ls.enable = true;
               pylsp.enable = true;
 			  nixd.enable = true;
-			  ruby-lsp.enable = true;
+              ruby-lsp = {
+                enable = true;
+                autostart = true;
+              };
 			  sqls.enable = true;
 			  texlab.enable = true;
 			  jsonls.enable = true;
@@ -137,9 +155,12 @@
 			  docker-compose-language-service.enable = true;
             };
           };
-		  # === CMP NVIM LSP ===
-		  cmp-nvim-lsp.enable = true;
-          cmp.enable = true;
+
+		  # === CMP-NVIM (Now called only CMP) ===
+          cmp = {
+            enable = true;
+            autoEnableSources = true;
+          };
         };
       };
     };
