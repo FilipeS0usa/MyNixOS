@@ -15,6 +15,7 @@
     ./system-conf/firewall.nix
     ./system-conf/network.nix
     ./system-conf/time-location.nix
+    ./system-conf/extra-hosts.nix
     # Sytem environments 
     ./environments/hyprland-de.nix
     ./environments/gnome-de.nix
