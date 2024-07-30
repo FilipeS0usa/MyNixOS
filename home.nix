@@ -21,6 +21,7 @@
   starship.enable = true;
   bash.enable = true;
   nixvim.enable = true;
+  zathura.enable = true;
 
   # Enable programs
   firefox.enable = true;

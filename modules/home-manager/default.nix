@@ -8,6 +8,7 @@
     ./cliPrograms/bash.nix
     ./cliPrograms/files/files.nix # Place home files of Cli Programs
     ./cliPrograms/nixvim.nix
+    ./cliPrograms/zathura.nix
 
     # Programs
     ./programs/firefox.nix
