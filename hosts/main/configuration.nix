@@ -14,6 +14,7 @@
   qemu-kvm.enable = true;
   docker.enable = true;
   virtualbox.enable = false;
+  ssh.enable = true;
 
   # General System Configs
   ## Bootloader
@@ -35,6 +36,7 @@
   # Extra network hosts
   # WARNING: You need to create the file extra-hosts.nix in modules/nixos/system-conf/ or this will not work
   extra-hosts.enable = true;
+  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.b3rrypi = {

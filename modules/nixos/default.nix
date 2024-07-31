@@ -5,6 +5,7 @@
     ./programs/docker.nix
     ./programs/qemu-kvm.nix
     ./programs/virtualbox.nix
+    ./programs/ssh.nix
     # Services
     ./services/pipewire.nix
     # Storage Optimization

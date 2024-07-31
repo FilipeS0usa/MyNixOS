@@ -10,6 +10,7 @@
   qemu-kvm.enable = true;
   docker.enable = true;
   virtualbox.enable = false;
+  ssh.enable = true;
 
   # General System Configs
   ## Bootloader
