@@ -48,14 +48,14 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/b3rrypi/configuration.nix
-          ./nixosModules
+          ./modules/nixos
         ];
       };
       hyprland = lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
           ./hosts/hyprland/configuration.nix
-          ./nixosModules
+          ./modules/nixos
         ];
       };
     };
