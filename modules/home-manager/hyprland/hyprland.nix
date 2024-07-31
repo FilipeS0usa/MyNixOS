@@ -145,7 +145,7 @@
               "$mainMod, R, exec, $menu"
               "$mainMod, P, pseudo, # dwindle"
               "$mainMod, J, togglesplit, # dwindle"
-              "$mainMod, B, exec, google-chrome-stable"
+              "$mainMod, B, exec, firefox"
               "$mainMod, L, exec, hyprlock"
               
 
