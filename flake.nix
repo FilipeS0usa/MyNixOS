@@ -28,9 +28,8 @@
     }; 
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
   let
-    secrets = builtins.fromJSON (builtins.readFile "${self}/secrets/secrets.json");
     lib = nixpkgs.lib;
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -39,7 +38,7 @@
     nixosConfigurations = {
       main = lib.nixosSystem {
         inherit system;
-        specialArgs = { inherit inputs; inherit secrets; };
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/main/configuration.nix
           ./modules/nixos
