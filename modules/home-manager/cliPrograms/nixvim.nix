@@ -43,6 +43,7 @@
           luasnip.enable = true;
 		  nix.enable = true;
           git-conflict.enable = true;
+          tmux-navigator.enable = true;
           
           # === VIMTEX ===
           vimtex = {
