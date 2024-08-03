@@ -22,6 +22,7 @@
   bash.enable = true;
   nixvim.enable = true;
   zathura.enable = true;
+  tmux.enable = true;
 
   # Enable programs
   firefox.enable = true;
