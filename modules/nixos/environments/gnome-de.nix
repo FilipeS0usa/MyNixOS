@@ -9,6 +9,7 @@
     # Extra packages that I want gnome to have
     environment.systemPackages = with pkgs; [
       gnomeExtensions.blur-my-shell
+      gnomeExtensions.forge
     ];
     services.xserver = {
       # Enable the X11 windowing system.
