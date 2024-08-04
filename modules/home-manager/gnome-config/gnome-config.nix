@@ -1,3 +1,7 @@
+# This config had inspiration from this post:
+# https://heywoodlh.io/nixos-gnome-settings-and-keyboard-shortcuts
+# Also to be able to search for the correct key values I used this command:
+# gsettings list-recursively org.gnome.desktop.wm.keybindings
 { config, lib, ... }: {
   options = {
     gnome-config.enable = lib.mkEnableOption "enables gnome-config";

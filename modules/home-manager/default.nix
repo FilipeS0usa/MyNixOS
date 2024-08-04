@@ -21,7 +21,7 @@
     ./hyprland/hyprlock.nix
 
     # Gnome
-    ./gnome/gnome.nix
+    ./gnome-config/gnome-config.nix
   ];
 }
 
