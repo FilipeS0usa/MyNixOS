@@ -19,6 +19,9 @@
     ./hyprland/hyprpaper.nix
     ./hyprland/hypridle.nix
     ./hyprland/hyprlock.nix
+
+    # Gnome
+    ./gnome/gnome.nix
   ];
 }
 

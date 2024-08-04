@@ -2,7 +2,6 @@
 
 {
   imports = [
-    # ./../../homeManagerModules/default.nix
     ./modules/home-manager
   ];
 
@@ -26,6 +25,9 @@
 
   # Enable programs
   firefox.enable = true;
+
+  # Enable Gnome Custom configuration
+  gnome-config.enable = true;
   
   # Enable Hyprland config
   hyprland.enable = false;
