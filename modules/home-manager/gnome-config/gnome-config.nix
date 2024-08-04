@@ -35,6 +35,8 @@
       "org/gnome/settings-daemon/plugins/media-keys" = {
         # Opens the browser
         www = [ "<Super>b" ];
+        # Super+I instead of Super+L
+        screensaver = [ "<Super>i" ];
         # Controls media (music, video, etc...)
         next = [ "<Shift><Control>n" ];
         previous = [ "<Shift><Control>p" ];
