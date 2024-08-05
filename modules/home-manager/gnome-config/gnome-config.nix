@@ -20,6 +20,7 @@
       # Keybinds to window management
       "org/gnome/desktop/wm/keybindings" = {
         close = ["<Super>w"];
+        minimize = "disabled";
         switch-applications = "disabled";
         move-to-workspace-1 = ["<Shift><Super>1"];
         move-to-workspace-2 = ["<Shift><Super>2"];
