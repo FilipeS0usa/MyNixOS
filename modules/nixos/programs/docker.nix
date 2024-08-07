@@ -6,6 +6,12 @@
   };
 
   config = lib.mkIf config.docker.enable {
+
+    environment.systemPackages = with pkgs; [
+      # Cli Devcontainers
+      devcontainer
+    ];
+
     # Enabling docker
     virtualisation.docker = {
       enable = true;
