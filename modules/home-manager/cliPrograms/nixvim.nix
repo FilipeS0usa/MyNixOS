@@ -135,26 +135,26 @@
 
         # === LSP ===
         lsp = {
-          enable = true;
-          servers = {
-            lua-ls.enable = true;
-            pylsp.enable = true;
-            nixd.enable = true;
-            ruby-lsp = {
-              enable = true;
-              autostart = true;
-            };
-            sqls.enable = true;
-            texlab.enable = true;
-            jsonls.enable = true;
-            html.enable = true;
-            cssls.enable = true;
-            bashls.enable = true;
-            ansiblels.enable = true;
-            java-language-server.enable = true;
-            dockerls.enable = true;
-            docker-compose-language-service.enable = true;
-          };
+         enable = true;
+         servers = {
+           lua-ls.enable = true;
+           pylsp.enable = true;
+           nixd.enable = true;
+           ruby-lsp = {
+             enable = true;
+             autostart = true;
+           };
+           sqls.enable = true;
+           texlab.enable = true;
+           # jsonls.enable = true;
+           # html.enable = true;
+           # cssls.enable = true;
+           bashls.enable = true;
+           ansiblels.enable = true;
+           java-language-server.enable = true;
+           dockerls.enable = true;
+           docker-compose-language-service.enable = true;
+         };
         };
 
         # === CMP-NVIM (Now called only CMP) ===
