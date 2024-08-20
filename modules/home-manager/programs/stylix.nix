@@ -73,8 +73,8 @@
 	gnome.enable = true;
 	nixvim = {
 	  enable = true;
-	  transparent_bg.main = true;
-	  transparent_bg.sign_column = true;
+	  transparentBackground.main = true;
+	  transparentBackground.signColumn = true;
 	};	
   };
 }
