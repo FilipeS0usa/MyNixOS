@@ -10,6 +10,7 @@
     environment.systemPackages = with pkgs; [
       gnomeExtensions.blur-my-shell
       gnomeExtensions.forge
+      gnomeExtensions.bluetooth-battery
     ];
     services.xserver = {
       # Enable the X11 windowing system.

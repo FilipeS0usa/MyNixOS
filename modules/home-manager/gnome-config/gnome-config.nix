@@ -15,6 +15,7 @@
           "system-monitor@gnome-shell-extensions.gcampax.github.com"
           "forge@jmmaranan.com"
           "blur-my-shell@aunetx"
+          "bluetooth-battery@michalw.github.com"
         ];
       };
       # Keybinds to window management
@@ -39,9 +40,9 @@
         # Super+I instead of Super+L
         screensaver = [ "<Super>i" ];
         # Controls media (music, video, etc...)
-        next = [ "<Shift><Control>n" ];
-        previous = [ "<Shift><Control>p" ];
-        play = [ "<Shift><Control>space" ];
+        # next = [ "<Shift><Control>n" ];
+        # previous = [ "<Shift><Control>p" ];
+        # play = [ "<Shift><Control>space" ];
         # Calls the custom keybind
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
