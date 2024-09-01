@@ -51,7 +51,7 @@
       # Custom Keybind to open kitty with tmux
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         name = "kitty super";
-        command = "kitty -e tmux";
+        command = "kitty";
         binding = "<Super>q";
       };
     };
