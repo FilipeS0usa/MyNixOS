@@ -8,7 +8,7 @@
     programs.git = {
       enable = true;
       userName = "FilipeS0usa";
-      userEmail = "77252969+FilipeS0usa@users.noreply.github.com";
+      userEmail = "filipes0usa.git@proton.me";
       extraConfig = {
         core.editor = "nvim";
       };
