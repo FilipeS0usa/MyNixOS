@@ -20,7 +20,7 @@
           "$cmd_duration"
           "$line_break"
           "$python"
-          "$shlvl"
+          "$nix_shell"
           "$character"
         ];
 
@@ -35,12 +35,19 @@
           vimcmd_symbol = "[❮](green)";
         };
 
+        nix_shell = {
+          heuristic = false;
+          symbol = "";
+          format = "[$symbol $name ]($style)";
+          style = "blue bold";
+        };
+
         # Show shell level
         shlvl = {
           disabled = false;
           format = "[[$symbol](blue) $shlvl](purple)";
           symbol = "";
-          threshold = 2;
+          threshold = 1;
         };
 
         # Show git branch
