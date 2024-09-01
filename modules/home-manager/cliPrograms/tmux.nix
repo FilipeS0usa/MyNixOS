@@ -28,6 +28,12 @@
           '';
         }
         tmuxPlugins.sensible
+        {
+          plugin = tmuxPlugins.resurrect;
+          extraConfig = ''
+            set -g @ressurect-strategy-nvim 'session'
+          '';
+        }
       ];
       extraConfig = ''
         # Open panes in current directory
