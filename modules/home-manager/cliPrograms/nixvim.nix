@@ -144,7 +144,7 @@
              enable = true;
              autostart = true;
            };
-           sqls.enable = true;
+           # sqls.enable = true;
            texlab.enable = true;
            # jsonls.enable = true;
            # html.enable = true;
