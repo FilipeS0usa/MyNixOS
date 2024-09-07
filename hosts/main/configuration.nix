@@ -64,6 +64,8 @@
     mongodb-compass
     git
     git-crypt
+    # Work
+    teams
   ];
 
 
