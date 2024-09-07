@@ -8,7 +8,17 @@
       enable = true;
       defaultEditor = true;
       
-      extraPackages = [pkgs.xclip];
+      extraPackages = with pkgs; [
+        xclip
+        # Packages for Conform Plugin
+        black
+        ruff
+        prettierd
+        nodePackages.prettier
+        stylua
+        codespell
+        rubyfmt
+      ];
       
       viAlias = true;
       vimAlias = true;
@@ -63,11 +73,13 @@
         # === CONFORM ===
         conform-nvim = {
           enable = true;
+          package = pkgs.vimPlugins.conform-nvim;
           settings = {
             formatters_by_ft = {
               lua = [ "stylua" ];
               # Conform will run multiple formatters sequenstially
-              python = [ "isort" "black" ];
+              python = [ "ruff_fix" "ruff_format" "ruff_organize_imports" ];
+              ruby = [ "rubyfmt" ];
               # Use stop_after_first to run only the first available formatter
               javascript = {
                 __unkeyed-1 = "prettierd";
@@ -78,7 +90,7 @@
               "*" = [ "codespell" "prettier"];
             };
             format_on_save = {
-              lsp_format = "first";
+              lsp_format = "fallback";
             };
           };
         };
