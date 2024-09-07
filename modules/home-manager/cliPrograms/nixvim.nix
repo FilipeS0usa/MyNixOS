@@ -63,19 +63,23 @@
         # === CONFORM ===
         conform-nvim = {
           enable = true;
-          formattersByFt = {
-            javascript = [ "prettier" ];
-            javascriptreact = [ "prettier" ];
-            css = [ "prettier" ];
-            html = [ "prettier" ];
-            json = [ "prettier" ];
-            yaml = [ "prettier" ];
-            markdown = [ "prettier" ];
-            python = [ "isort" "black" ];
-          };
-          formatOnSave = {
-            lspFallback = true;
-            timeoutMs = 500;
+          settings = {
+            formatters_by_ft = {
+              lua = [ "stylua" ];
+              # Conform will run multiple formatters sequenstially
+              python = [ "isort" "black" ];
+              # Use stop_after_first to run only the first available formatter
+              javascript = {
+                __unkeyed-1 = "prettierd";
+                __unkeyed-2 = "prettier";
+                stop_after_first = true;
+              };
+              # Use the "*" filetype to run formatters on all filetypes
+              "*" = [ "codespell" "prettier"];
+            };
+            format_on_save = {
+              lsp_format = "first";
+            };
           };
         };
 
