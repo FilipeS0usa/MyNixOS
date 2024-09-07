@@ -68,6 +68,7 @@
     teams
   ];
 
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   # To enable bash completion
   environment.pathsToLink = [ "/share/bash-completion" ];
