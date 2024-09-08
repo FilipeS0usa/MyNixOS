@@ -174,31 +174,30 @@
         };
 
         # === CMP-NVIM (Now called only CMP) ===
+        # cmp-buffer.enable = true;
+        # cmp-path.enable = true;
+        # cmp-nvim-lsp.enable = true;
+        # cmp-nvim-lua.enable = true;
         cmp = {
           enable = true;
           autoEnableSources = true;
-          # sources = [
-          #   {name = "nvim_lsp";}
-          #   {name = "path";}
-          #   {name = "buffer";}
-          #   {name = "luasnip";}
-          # ];
-
-          # mapping = {
-          #   "<CR>" = "cmp.mapping.confirm({ select = true })";
-          #   "<Tab>" = {
-          #     action = ''
-          #       function(fallback)
-          #         if cmp.visible() then
-          #           cmp.select_next_item()
-          #         else
-          #           fallback()
-          #         end
-          #       end
-          #     '';
-          #     modes = [ "i" "s" ];
-          #   };
-          # };
+          settings = {
+            sources = [
+              { name = "nvim_lsp"; }
+              { name = "path"; }
+              { name = "buffer"; }
+              { name = "nvim_lua"; }
+            ];
+            mapping = {
+              "<C-k>" = "cmp.mapping.complete()";
+              "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+              "<C-e>" = "cmp.mapping.close()";
+              "<C-f>" = "cmp.mapping.scroll_docs(4)";
+              "<C-y>" = "cmp.mapping.confirm({ select = true, cmp.ConfirmBehavior.Insert })";
+              "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+              "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+            };
+          };
         };
       };
     };
