@@ -9,7 +9,7 @@
       defaultEditor = true;
       
       extraPackages = with pkgs; [
-        xclip
+        wl-clipboard
         # Packages for Conform Plugin
         black
         ruff
@@ -29,6 +29,7 @@
         maplocalleader = " ";
       };
 
+      clipboard.register = "unnamedplus";
 
       opts = {
         number = true;
@@ -39,7 +40,6 @@
         updatetime = 300;
         termguicolors = true;
         mouse = "a";
-        clipboard = "unnamedplus";
       };
       
       keymaps = [
