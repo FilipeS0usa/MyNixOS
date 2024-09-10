@@ -65,7 +65,7 @@
     git
     git-crypt
     # Work
-    teams
+    teams-for-linux
   ];
 
   nixpkgs.config.allowUnsupportedSystem = true;
