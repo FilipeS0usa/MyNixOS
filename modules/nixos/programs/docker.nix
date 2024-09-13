@@ -15,6 +15,9 @@
     # Enabling docker
     virtualisation.docker = {
       enable = true;
+      daemon.settings = {
+        insecure-registries = [ "10.251.220.36:443" ];
+      };
       # extraOptions = "--dns 8.8.8.8 --dns 8.8.4.4";
       # rootless = {
       #   enable = true;
