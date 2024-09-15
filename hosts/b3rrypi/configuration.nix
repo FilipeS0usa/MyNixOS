@@ -53,6 +53,7 @@
     protonvpn-gui
     gnomeExtensions.proton-vpn-button
     # Code
+    code-cursor
     vscode
     slack
     mongodb-compass
