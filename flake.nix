@@ -9,8 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Hyprland
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # # Hyprland
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     # Stylix for styling my OS collors
     stylix.url = "github:danth/stylix";
