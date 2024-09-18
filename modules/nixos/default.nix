@@ -9,6 +9,7 @@
     ./programs/steam.nix
     # Services
     ./services/pipewire.nix
+    ./services/flatpak.nix
     # Storage Optimization
     ./storage-optimization/storage-optimization.nix
     # System wide configuration modules
