@@ -11,7 +11,7 @@
   docker.enable = true;
   virtualbox.enable = false;
   ssh.enable = true;
-  flatpak.enable = true;
+  flatpak.enable = false;
 
   # General System Configs
   ## Bootloader
