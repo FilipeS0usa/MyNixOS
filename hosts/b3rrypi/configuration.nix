@@ -60,7 +60,14 @@
     mongodb-compass
     git
     git-crypt
+    ankama-launcher
   ];
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    ankama-launcher = pkgs.callPackage /home/b3rrypi/nixos/pkgs/ankama/default.nix { };
+  };
+
+  nixpkgs.config.allowUnfree = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
