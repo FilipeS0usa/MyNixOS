@@ -60,14 +60,14 @@
     mongodb-compass
     git
     git-crypt
-    ankama-launcher
+    # ankama-launcher
     # Zen-browser
     # inputs.zen-browser.packages."${system}".generic
   ];
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    ankama-launcher = pkgs.callPackage /home/b3rrypi/nixos/pkgs/ankama/default.nix { };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   ankama-launcher = pkgs.callPackage /home/b3rrypi/nixos/pkgs/ankama/default.nix { };
+  # };
 
   nixpkgs.config.allowUnfree = true;
 
