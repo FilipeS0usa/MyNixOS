@@ -61,6 +61,8 @@
     git
     git-crypt
     ankama-launcher
+    # Zen-browser
+    # inputs.zen-browser.packages."${system}".generic
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
