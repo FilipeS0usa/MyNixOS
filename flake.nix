@@ -9,8 +9,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # # Hyprland
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # Hyprland
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
+    # ZenBrowser
+    zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     # Stylix for styling my OS collors
     stylix.url = "github:danth/stylix";
