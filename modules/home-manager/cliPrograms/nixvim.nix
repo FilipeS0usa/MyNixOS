@@ -96,6 +96,7 @@
         };
 
         # === TELESCOPE ===
+        web-devicons.enable = true;
         telescope = {
           enable = true;
           keymaps = {
