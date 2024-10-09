@@ -52,7 +52,6 @@
     discord
     spotify
     protonvpn-gui
-    gnomeExtensions.proton-vpn-button
     # Code
     code-cursor
     vscode
