@@ -32,6 +32,9 @@
   storage-optimization.enable = true;
 
 
+  programs.wireshark.enable = true; 
+  programs.wireshark.package = pkgs.wireshark; 
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.b3rrypi = {
     isNormalUser = true;
@@ -59,6 +62,7 @@
     mongodb-compass
     git
     git-crypt
+    stremio
     # ankama-launcher
     # Zen-browser
     # inputs.zen-browser.packages."${system}".generic
