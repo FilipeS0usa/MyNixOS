@@ -59,6 +59,7 @@
     protonvpn-gui
     gnomeExtensions.proton-vpn-button
     # Code
+    code-cursor
     vscode
     slack
     mongodb-compass
@@ -66,9 +67,12 @@
     git-crypt
     # Work
     teams-for-linux
+    winbox4
   ];
 
   nixpkgs.config.allowUnsupportedSystem = true;
+
+  nixpkgs.config.allowUnfree = true;
 
   # To enable bash completion
   environment.pathsToLink = [ "/share/bash-completion" ];
