@@ -154,10 +154,10 @@
         lsp = {
          enable = true;
          servers = {
-           lua-ls.enable = true;
+           lua_ls.enable = true;
            pylsp.enable = true;
            nixd.enable = true;
-           ruby-lsp = {
+           ruby_lsp = {
              enable = true;
              autostart = true;
            };
@@ -168,9 +168,9 @@
            # cssls.enable = true;
            bashls.enable = true;
            ansiblels.enable = true;
-           java-language-server.enable = true;
+           java_language_server.enable = true;
            dockerls.enable = true;
-           docker-compose-language-service.enable = true;
+           docker_compose_language_service.enable = true;
          };
         };
 
