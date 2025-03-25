@@ -65,9 +65,11 @@
     mongodb-compass
     git
     git-crypt
+    git-lfs
     # Work
     teams-for-linux
     winbox4
+    neovim
   ];
 
   nixpkgs.config.allowUnsupportedSystem = true;
