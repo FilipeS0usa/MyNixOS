@@ -8,7 +8,7 @@
     virtualisation.libvirtd.enable = true;
     programs.virt-manager.enable = true;
     # Activate Opengl
-    hardware.opengl.enable = true;
+    hardware.graphics.enable = true;
     # Enable copy and paste
     services = {
       qemuGuest.enable = true;
