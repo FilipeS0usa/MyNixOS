@@ -10,7 +10,7 @@
     };
 
     # Hyprland
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     # ZenBrowser
     # zen-browser.url = "github:MarceColl/zen-browser-flake";
