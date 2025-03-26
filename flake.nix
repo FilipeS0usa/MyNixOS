@@ -10,13 +10,13 @@
     };
 
     # Hyprland
-    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     # ZenBrowser
     # zen-browser.url = "github:MarceColl/zen-browser-flake";
 
     # Stylix for styling my OS collors
-    stylix.url = "github:danth/stylix";
+    # stylix.url = "github:danth/stylix";
 
     # Firefox for firefox personalize
     firefox-addons = {
@@ -63,12 +63,21 @@
       };
     };
     homeConfigurations = {
+      hyprland = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+	    extraSpecialArgs = { inherit inputs; };
+        modules = [ 
+          ./home_hyprland.nix
+          #inputs.stylix.homeManagerModules.stylix
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
+      };
       b3rrypi = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 	    extraSpecialArgs = { inherit inputs; };
         modules = [ 
           ./home.nix
-          inputs.stylix.homeManagerModules.stylix
+          #inputs.stylix.homeManagerModules.stylix
           inputs.nixvim.homeManagerModules.nixvim
         ];
       };
