@@ -9,8 +9,8 @@
 
         sleep 1
 
-        ${pkgs.swww}/bin/swww img ${/home/b3rrypi/Pictures/Wallpapers/14.png} &
       '';
+  # ${pkgs.swww}/bin/swww img ${/home/b3rrypi/Pictures/Wallpapers/14.png} &
     in
   {
   options = {
@@ -22,6 +22,8 @@
 
     wayland.windowManager.hyprland = {
       enable = true;
+      package = null;
+      portalPackage = null;
       xwayland.enable = true;
       systemd = {
         enable = true;
@@ -80,9 +82,9 @@
             "passes" = "1";
           };
 
-          "drop_shadow" = "yes";
-          "shadow_range" = "4";
-          "shadow_render_power" = "3";
+          # "drop_shadow" = "yes";
+          # "shadow_range" = "4";
+          # "shadow_render_power" = "3";
         };
 
         animations = {

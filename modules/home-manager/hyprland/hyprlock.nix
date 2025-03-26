@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  wallpaper_path = /home/b3rrypi/Pictures/Wallpapers/14.png;
+  # wallpaper_path = /home/b3rrypi/Pictures/Wallpapers/14.png;
 in
 {
   options = {
@@ -18,7 +18,7 @@ in
 
         backgroung = [
           {
-            path = "${wallpaper_path}";
+            # path = "${wallpaper_path}";
             blur_passes = 3;
             blur_size = 8;
           }
