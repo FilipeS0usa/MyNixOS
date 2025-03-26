@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }: {
 
-  stylix.enable = true;
-  stylix.autoEnable = true;
+  stylix.enable = false;
+  stylix.autoEnable = false;
 
   # To search for base16 themes do the following commands
   # nix build nixpkgs#base16-schemes

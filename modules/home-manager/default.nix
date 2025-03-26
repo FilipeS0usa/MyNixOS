@@ -12,7 +12,7 @@
 
     # Programs
     ./programs/firefox.nix
-    ./programs/stylix.nix
+    #./programs/stylix.nix
 
     # Hyprland
     ./hyprland/hyprland.nix
