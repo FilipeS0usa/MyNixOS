@@ -42,9 +42,12 @@ cd ~/nixos
 sudo cp /etc/nixos/hardware-configuration.nix ~/nixos/hosts/main/hardware-configuration.nix
 ```
 
-3. Update Flake so that we don't have any incompatibility
+3. Update Flake (if you want to).
+
+_*DISCLAIMER*_: I do it some times, because you can have some incompatibility with the fresh installed NixOS. I think there must be a way to enforce the flake build that we have configured, but I just didn't care... (Ex.: I had some problems with the bootloader, because the one that I already had installed was a newer version than the one that the flake had, so it wouldn't let me build my system for some reason, or maybe was just a warning and my system was build successfully, I GUESS WE WILL NEVER KNOW).
 
 ```bash
+# Optional
 nix flake update
 ```
 
