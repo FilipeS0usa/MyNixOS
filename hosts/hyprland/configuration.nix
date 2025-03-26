@@ -55,10 +55,10 @@
     wget
     git
     git-crypt
+    neovim
     # Tools
     mongodb-compass
-    winbox
-    keepassxc
+    winbox4
   ];
 
   # Enable CUPS to print documents.
