@@ -13,14 +13,14 @@
           id = 1;
           name = "clean";
           search = {
-            default = "DuckDuckGo";
-            privateDefault = "DuckDuckGo";
+            default = "ddg";
+            privateDefault = "ddg";
             force = true; 
           };
 
           # To search for extension names use the following command:
           # nix flake show "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons" | grep badger
-          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             proton-pass
             proton-vpn
             ublock-origin
@@ -31,14 +31,14 @@
           id = 0;
           name = "b3rrypi";
           search = {
-            default = "DuckDuckGo";
-            privateDefault = "DuckDuckGo";
+            default = "ddg";
+            privateDefault = "ddg";
             force = true; 
           };
 
           # To search for extension names use the following command:
           # nix flake show "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons" | grep badger
-          extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+          extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
             proton-pass
             proton-vpn
             ublock-origin

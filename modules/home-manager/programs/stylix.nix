@@ -20,7 +20,7 @@
 	#};
 
   # To generate colors from walpapper
-  stylix.image = /home/b3rrypi/Pictures/Wallpapers/14.png;
+  # stylix.image = /home/b3rrypi/Pictures/Wallpapers/14.png;
 
   # To search for cursor available just do the following commands
   # nix build nixpkgs#bibata-cursors
@@ -37,7 +37,7 @@
   # For selecting Fonts
   stylix.fonts = {
 	monospace = {
-	  package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+	  package = pkgs.nerd-fonts.jetbrains-mono;
 	  name = "JetBrainsMono Nerd Font Mono";
 	};
 	sansSerif = {
@@ -71,6 +71,10 @@
   stylix.targets = {
 	kitty.enable = true;
 	gnome.enable = true;
+	firefox = {
+	  enable = true;
+	  profileNames = [ "b3rrypi" "clean" ];
+	};
 	nixvim = {
 	  enable = true;
 	  transparentBackground.main = true;
